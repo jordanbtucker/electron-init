@@ -6,6 +6,6 @@ const debug = Debug('electron-init')
 
 const message = 'Electron, React, and Webpack'
 debug('message: %s', message)
-const App = () => <div>{message}</div>
+const App = () => <h1>{message}</h1>
 
 export default App
