@@ -1,0 +1,59 @@
+{
+  "name": "electron-init",
+  "version": "1.0.0",
+  "description": "Starting point for Electron projects",
+  "main": "dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack && electron-builder",
+    "coverage": "npm test && tap --coverage-report=html",
+    "debug": "cross-env DEBUG=* npm start",
+    "lint": "eslint --fix .",
+    "start": "electron -r babel-register src/main/index.dev.js",
+    "test": "npm run lint && tap test -Rspec --cov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanbtucker/electron-init.git"
+  },
+  "author": "Jordan Tucker <jordanbtucker@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordanbtucker/electron-init/issues"
+  },
+  "homepage": "https://github.com/jordanbtucker/electron-init#readme",
+  "dependencies": {
+    "debug": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "electron": "^2.0.6",
+    "electron-builder": "^20.26.1",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-hot-loader": "^4.3.4",
+    "sinon": "^6.1.4",
+    "tap": "^12.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  }
+}
