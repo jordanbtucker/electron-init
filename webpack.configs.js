@@ -47,6 +47,11 @@ const rendererConfig = Object.assign({}, baseConfig, {
 	target: 'electron-renderer',
 })
 
+rendererConfig.module.rules.push({
+	test: /\.css$/,
+	use: ['style-loader', 'css-loader'],
+})
+
 if (!isProduction) {
 	rendererConfig.entry.push('webpack/hot/dev-server', 'webpack-dev-server/client?http://localhost:8080/')
 	rendererConfig.plugins.push(new HotModuleReplacementPlugin())
